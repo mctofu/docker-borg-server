@@ -2,7 +2,7 @@
 
 [BorgBackup](https://borgbackup.readthedocs.io/en/stable/) in a docker container for remote ssh access. This can be useful for running Borg on a NAS.
 
-Borg and ssh are hosted in the docker container and storage for backups is mounted as an external volume.
+Borg and ssh are hosted in the docker container. Credentials and storage for backups are mounted as an external volume.
 
 ## Building
 
@@ -20,7 +20,7 @@ Two volumes should be mounted to the container:
 * `/home/borg/.ssh` - Should contain an `authorized_keys` file that defines ssh keys that will be allowed to connect. Needs read access by the BORG_UID user.
 
 ```
-docker run --rm --name borgbackup -v /volume1/borgbackup/backups:/home/borg/backups -v /volume1/borgbackups/ssh_keys:/home/borg/.ssh -p 2222:22 borgbackup
+docker run --rm --name borgbackup -v /volume1/borgbackup/backups:/home/borg/backups -v /volume1/borgbackup/ssh_keys:/home/borg/.ssh -p 2222:22 borgbackup
 ```
 
 ## Using
