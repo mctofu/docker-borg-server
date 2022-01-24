@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.15.0
 
 ARG BORG_UID
 # workaround for ARGs not working completely on synology devices
